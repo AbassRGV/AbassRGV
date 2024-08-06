@@ -1,0 +1,4 @@
+# created by virtualenv automatically
+*venv
+demo
+*db.sqlite3
