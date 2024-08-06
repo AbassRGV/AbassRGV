@@ -1,0 +1,10 @@
+# Exclution du projet
+*venv
+Kolsafe/db.sqlite3
+*.sqlite3
+
+# Exclure les dossiers personnel du projet
+demo
+
+# Exclure les fichiers personnel du projet
+main.py
