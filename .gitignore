@@ -1,4 +1,9 @@
-# created by virtualenv automatically
+# Exclution du projet
 *venv
+*.sqlite3
+
+# Exclure les dossiers personnel du projet
 demo
-*db.sqlite3
+
+# Exclure les fichiers personnel du projet
+main
