@@ -1,6 +1,6 @@
 # Exclution du projet
 *venv
-*db.sqlite3
+Kolsafe/db.sqlite3
 *.sqlite3
 
 # Exclure les dossiers personnel du projet
