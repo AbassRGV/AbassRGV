@@ -31,6 +31,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Ajout de Django Jazzmin est  thème pour l’interface d’administration de Django
+    'jazzmin',
+    # Ajout des applications
+    'home',
+    'services',
+    'blog',
+    'trainings',
+    'about',
+    'contact',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
