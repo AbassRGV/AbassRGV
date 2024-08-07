@@ -5,6 +5,5 @@ Kolsafe/db.sqlite3
 
 # Exclure les dossiers personnel du projet
 demo
-
 # Exclure les fichiers personnel du projet
 main.py
