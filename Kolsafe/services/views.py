@@ -1,3 +1,7 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+
+
+def lesServices(request):
+    return render(request, 'services/listServices.html')

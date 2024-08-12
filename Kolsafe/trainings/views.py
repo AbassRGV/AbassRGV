@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def lesTrainings(request):
+    return render(request, 'training/listTraining.html')
