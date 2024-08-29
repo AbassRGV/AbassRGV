@@ -1,6 +1,50 @@
 {% extends 'home/base.html' %}
 
 
-{% block section %}
-<h1>Je suis la page d'Accueil  </h1>      
+{% block main %}
+<main class="container mt-5">
+    
+    
+<hero-section>
+{% include 'home/hero.html' %}
+</hero-section>
+
+
+    <section id="formations" class="my-5">
+        <h2 class="text-center">Formations</h2>
+        <div class="row justify-content-center">
+            {% for formation in formations %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ formation.title }}</h5>
+                            <p class="card-text">{{ formation.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section id="services" class="my-5">
+        <h2 class="text-center">Services</h2>
+        <div class="row justify-content-center">
+            {% for service in services %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        {% if service.image %}
+                            <img src="{{ service.image.url }}" class="card-img-top" alt="{{ service.title }}">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ service.title }}</h5>
+                            <p class="card-text">{{ service.description }}</p>
+                            <p class="card-text"><strong>Prix :</strong> {{ service.price }} €</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+
 {% endblock %}
