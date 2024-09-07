@@ -65,7 +65,8 @@ body {
   outline: 0 !important; }
 
 #iconButton {
-  color: red;
+  color: gray;
+  font-size: 80px;
 }
 
 hr {

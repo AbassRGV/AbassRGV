@@ -8,15 +8,15 @@
 			<h2 class="row-title text-center" >A propos de nous?</h2>
 			<p>Notre entreprise : Super cool discounts if you purchase early bird tickets now. Limited tickets available with some awesome perks and goodies! </p>
 			<!-- Start: Desc -->
-        <div class="row me-row content-ct">
-          <h2 class="row-title">Nos services :</h2>
+        <div class="row me-row content-ct mb-5" >
+          <h2 class="row-title mb-5">Nos services :</h2>
           <div class="col-md-4 feature">
-            <span class="material-icons">security</span>
+            <span class="material-icons" id="iconButton" >security</span>
             <h3>Formations Cybersecurité</h3>
             <p>Super cool discounts if you purchase early bird tickets now. Limited tickets available with some awesome perks and goodies!</p>
           </div>
           <div class="col-md-4 feature">
-            <span class="material-icons">groups</span>
+            <span class="material-icons" id="iconButton" >groups</span>
             <h3>Formation des employeurs</h3>
             <p>Best in class expert speakers who have extensive knowledge of the topic. All speakers are curated by the panel of experts.</p>
           </div>
@@ -44,7 +44,7 @@
 				            Votre message a été envoyé!
 				      		</div>
 									<form method="POST" id="contactForm" name="contactForm" class="contactForm">
-										{% csrf_token %}
+										 {% csrf_token %}
 										<div class="row">
 											<div class="col-md-6">
 												<div class="form-group">
