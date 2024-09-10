@@ -31,21 +31,22 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    # Ajout de Django Jazzmin est  thème pour l’interface d’administration de Django
-    'jazzmin',
-    # Ajout des applications
-    'home',
-    'services',
-    'blog',
-    'trainings',
-    'about',
-    'contact',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Ajout de Django Jazzmin est  thème pour l’interface d’administration de Django
+    #'jazzmin',
+    # Ajout des applications
+    'home',
+    'service',
+    'blog',
+    'formation',
+    'about',
+    'contact',
 ]
 
 MIDDLEWARE = [
@@ -112,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fr-fr'
 
 TIME_ZONE = 'UTC'
 
