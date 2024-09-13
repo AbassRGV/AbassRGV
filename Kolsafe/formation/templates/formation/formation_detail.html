@@ -11,16 +11,16 @@
                     <!-- Service title-->
                     <h1 class="fw-bolder mb-1">{{ formation.title }}</h1>
                     <!-- Service meta content-->
-                    <div class="text-muted fst-italic mb-2">Publier {{ formation.created_at|date:"F d, Y" }} par Aboubacar Abass SYLLA</div>
+                    <div class="text-muted fst-italic mb-2">Publier {{ formation.created_at|date:"F d, Y" }} par {{formation.publish_name}} </div>
                     <!-- Service categories-->
-                    <a class="badge bg-secondary text-decoration-none link-light" href="#">Formation</a>
+                    <a class="badge bg-secondary text-decoration-none link-light" href="{% url 'formation_list' %}">Formation</a>
                     <a class="badge bg-secondary text-decoration-none link-light" href="#">Offer</a>
                   
                     <br><br>
                     <div class="text-muted fst-italic mb-2">Modifier le {{ formation.modified_at|date:"F d, Y" }} par Aboubacar Abass SYLLA</div>
                 </header>
                 <!-- Preview image figure-->
-                {% if service.image %}
+                {% if formation.image %}
                 <figure class="mb-4"><img class="img-fluid rounded" src="{{ formation.image.url }}" alt="{{ formation.title }}" />
                 </figure>
                 {% else %}

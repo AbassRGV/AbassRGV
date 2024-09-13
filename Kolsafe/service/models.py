@@ -8,6 +8,7 @@ class Service(models.Model):
     image = models.ImageField(upload_to='images/service', blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    publish_name = models.CharField(max_length=200)
 
     def __str__(self):
         return self.title

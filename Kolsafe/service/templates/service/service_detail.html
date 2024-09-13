@@ -13,7 +13,7 @@
                     <!-- Service meta content-->
                     <div class="text-muted fst-italic mb-2">Publier {{ service.created_at|date:"F d, Y" }} par Aboubacar Abass SYLLA</div>
                     <!-- Service categories-->
-                    <a class="badge bg-secondary text-decoration-none link-light" href="#">Service</a>
+                    <a class="badge bg-secondary text-decoration-none link-light" href="{% url 'service_list' %}">Service</a>
                     <a class="badge bg-secondary text-decoration-none link-light" href="#">Offer</a>
                   
                     <br><br>
@@ -109,5 +109,5 @@
         </div>
     </div>
 </div>
-
+{% include 'home/footer.html' %}
 {% endblock %}

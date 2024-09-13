@@ -1,33 +1,31 @@
-
-
+{% load static %}
 <style>
-   
     .footer1 {
-        background: #232323;
+        background: #565555;
         padding: 30px 0 0;
         font-size: 12px;
-        color: #999
+        color: #f0e9e9
     }
-    
+
     .footer1 a {
         color: #ccc
     }
-    
+
     .footer1 a:hover {
         color: #fff
     }
-    
+
     .footer1 .widget {
         margin-bottom: 30px
     }
-    
+
     .footer1 .widget-title {
         font-size: 17px;
         font-weight: 700;
         color: #ccc;
         margin: 0 0 20px
     }
-    
+
     .footer1 .entry-meta {
         border-top: 1px solid #ccc;
         border-bottom: 1px solid #ccc;
@@ -37,114 +35,123 @@
         font-size: 12px;
         font-size: .75rem
     }
-    
+
     .footer1 .entry-meta a {
         color: #333
     }
-    
+
     .footer1 .entry-meta .meta-in {
         border-top: 1px solid #ccc;
         border-bottom: 1px solid #ccc;
         padding: 10px 0
     }
-    
+
     .footer1 .follow-me-icons {
         font-size: 30px
     }
-    
+
     .footer1 .follow-me-icons i {
         float: left;
         margin: 0 10px 0 0
     }
-    
+
     .footer2 {
         background: #191919;
         padding: 15px 0;
         color: #777;
         font-size: 12px
     }
-    
+
     .footer2 a {
         color: #aaa
     }
-    
+
     .footer2 a:hover {
         color: #fff
     }
-    
+
     .footer2 p {
         margin: 0
     }
-    
+
     .footer2 .widget-simplenav {
         margin-left: -5px
     }
-    
+
     .footer2 .widget-simplenav a {
         margin: 0 5px
     }
+
     
-
-
 </style>
 
 <footer id="footer" class="clearfix">
     <div class="footer1">
-    <div class="container">
-    <div class="row">
-    <div class="col-md-3 widget">
-    <h3 class="widget-title">Contact</h3>
-    <div class="widget-body">
-    <p>+224 662 85 85 16<br>
-    <a href="mailto:#">some.email@kolsafe.com</a><br>
-    <br>
-    234 Kaloum Pond Road, Ashland City, TN 37015
-    </p>
-    </div>
-    </div>
-    <div class="col-md-3 widget">
-    <h3 class="widget-title">Follow us</h3>
-    <div class="widget-body">
-    <p class="follow-me-icons">
-    <a href=""><i class="fa fa-twitter fa-2"></i></a>
-    <a href=""><i class="fa fa-dribbble fa-2"></i></a>
-    <a href=""><i class="fa fa-github fa-2"></i></a>
-    <a href=""><i class="fa fa-facebook fa-2"></i></a>
-    </p>
-    </div>
-    </div>
-    <div class="col-md-6 widget">
-    <h3 class="widget-title">kolsafe</h3>
-    <div class="widget-body">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, dolores, quibusdam architecto voluptatem amet fugiat nesciunt placeat provident cumque accusamus itaque voluptate modi quidem dolore optio velit hic iusto vero praesentium repellat commodi ad id expedita cupiditate repellendus possimus unde?</p>
-    <p>Eius consequatur nihil quibusdam! Laborum, rerum, quis, inventore ipsa autem repellat provident assumenda labore soluta minima alias temporibus facere distinctio quas adipisci nam sunt explicabo officia tenetur at ea quos doloribus dolorum voluptate reprehenderit architecto sint libero illo et hic.</p>
-    </div>
-    </div>
-    </div> 
-    </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 widget">
+                    <h3 class="widget-title">Contact</h3>
+                    <div class="widget-body">
+                        <p>+224 662 85 85 16<br>
+                            <a href="mailto:#">some.email@kolsafe.com</a><br>
+                            <br>
+                            234 Kaloum Pond Road, Ashland City, TN 37015
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3 widget">
+                    <h3 class="widget-title">Follow us</h3>
+                    <div class="widget-body">
+                        <p class="follow-me-icons">
+                      
+                            <a href=""><i class="fa fa-dribbble fa-2"></i></a>
+                            <a href=""><i class="fa fa-github fa-2"></i></a>
+                            <a href=""><i class="fa fa-facebook fa-2"></i></a>
+                            <a href="https://x.com" target="_blank">
+                                <img class="incotweet" src="{% static 'images/tweeter.png'%}" alt="X" style="width: 24px; height: 24px;">
+                              </a>
+                           
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 widget">
+                    <h3 class="widget-title">kolsafe</h3>
+                    <div class="widget-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, dolores, quibusdam
+                            architecto voluptatem amet fugiat nesciunt placeat provident cumque accusamus itaque
+                            voluptate modi quidem dolore optio velit hic iusto vero praesentium repellat commodi ad id
+                            expedita cupiditate repellendus possimus unde?</p>
+                        <p>Eius consequatur nihil quibusdam! Laborum, rerum, quis, inventore ipsa autem repellat
+                            provident assumenda labore soluta minima alias temporibus facere distinctio quas adipisci
+                            nam sunt explicabo officia tenetur at ea quos doloribus dolorum voluptate reprehenderit
+                            architecto sint libero illo et hic.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="footer2">
-    <div class="container">
-    <div class="row">
-    <div class="col-md-6 widget">
-    <div class="widget-body">
-    <p class="simplenav">
-    <a href="#">Home</a> |
-    <a href="about.html">About</a> |
-    <a href="sidebar-right.html">Sidebar</a> |
-    <a href="contact.html">Contact</a> |
-    <b><a href="signup.html">Sign up</a></b>
-    </p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 widget">
+                    <div class="widget-body">
+                        <p class="simplenav">
+                            <a href="{% url 'home' %}">Home</a> |
+                            <a href="{% url 'service_list' %}">Services</a> |
+                            <a href="{% url 'formation_list' %}">Formations</a> |
+                            <a href="#">Contact</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 widget">
+                    <div class="widget-body">
+                        <p class="text-right">
+                            Copyright © 2024, Poyered by kolsafe Technology: <a href="https://kolsafe.com/"
+                                rel="#">kolsafe Cyber défesence</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    </div>
-    <div class="col-md-6 widget">
-    <div class="widget-body">
-    <p class="text-right">
-    Copyright © 2024, Your name. Design: <a href="https://gettemplate.com/" rel="designer">GetTemplate</a>
-    </p>
-    </div>
-    </div>
-    </div> 
-    </div>
-    </div>
-    </footer>
+</footer>

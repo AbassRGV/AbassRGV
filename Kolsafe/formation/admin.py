@@ -3,7 +3,7 @@ from .models import Formation
 
 
 class AdminFormation(admin.ModelAdmin):
-    list_display = ['title', 'image', 'description', 'certifier', 'price', 'created_at', 'updated_at']
+    list_display = ['title', 'image', 'description', 'certifier', 'price', 'created_at', 'updated_at', 'publish_name']
 
 
 admin.site.register(Formation, AdminFormation)

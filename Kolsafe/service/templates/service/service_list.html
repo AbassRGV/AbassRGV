@@ -3,8 +3,7 @@
 
 <div class="container mt-4">
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1>Liste des Services</h1>
-        <a href="{% url 'service_create' %}" class="btn btn-success">Ajouter un Service</a>
+        <h1>Liste des Services</h1>     
     </div>
     <div class="row">
         {% for service in object_list %}
@@ -31,4 +30,5 @@
     </div>
 </div>
 
+{% include 'home/footer.html' %}
 {% endblock %}
