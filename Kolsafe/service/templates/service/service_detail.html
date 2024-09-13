@@ -1,0 +1,113 @@
+{% extends 'home/base.html' %}
+{% block main %}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8">
+            <!-- Service content-->
+            <article>
+                <!-- Service header-->
+                <header class="mb-4">
+                    <!-- Service title-->
+                    <h1 class="fw-bolder mb-1">{{ service.title }}</h1>
+                    <!-- Service meta content-->
+                    <div class="text-muted fst-italic mb-2">Publier {{ service.created_at|date:"F d, Y" }} par Aboubacar Abass SYLLA</div>
+                    <!-- Service categories-->
+                    <a class="badge bg-secondary text-decoration-none link-light" href="{% url 'service_list' %}">Service</a>
+                    <a class="badge bg-secondary text-decoration-none link-light" href="#">Offer</a>
+                  
+                    <br><br>
+                    <div class="text-muted fst-italic mb-2">Modifier le {{ service.modified_at|date:"F d, Y" }} par Aboubacar Abass SYLLA</div>
+                </header>
+                <!-- Preview image figure-->
+                {% if service.image %}
+                <figure class="mb-4"><img class="img-fluid rounded" src="{{ service.image.url }}" alt="{{ service.title }}" />
+                </figure>
+                {% else %}
+                <h4 style="color: red;">Pas d'image ici</h4>
+                {% endif %}
+
+                <!-- Service content-->
+                <section class="mb-5">
+                    <p class="fs-5 mb-4">{{ service.description }}</p>
+                </section>
+            </article>
+            <!-- Comments section-->
+            <section class="mb-5">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <!-- Comment form-->
+                        <form class="mb-4"><textarea class="form-control" rows="3"
+                                placeholder="Join the discussion and leave a comment!"></textarea></form>
+                        <!-- Comment with nested comments-->
+                        <div class="d-flex mb-4">
+                            <!-- Parent comment-->
+                            <div class="flex-shrink-0"><img class="rounded-circle"
+                                    src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                            <div class="ms-3">
+                                <div class="fw-bold">Commenter Name</div>
+                                If you're going to lead a space frontier, it has to be government; it'll never be
+                                private enterprise. Because the space frontier is dangerous, and it's expensive, and it
+                                has unquantified risks.
+                                <!-- Child comment 1-->
+                                <div class="d-flex mt-4">
+                                    <div class="flex-shrink-0"><img class="rounded-circle"
+                                            src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                                    <div class="ms-3">
+                                        <div class="fw-bold">Commenter Name</div>
+                                        And under those conditions, you cannot establish a capital-market evaluation of
+                                        that enterprise. You can't get investors.
+                                    </div>
+                                </div>
+                                <!-- Child comment 2-->
+                                <div class="d-flex mt-4">
+                                    <div class="flex-shrink-0"><img class="rounded-circle"
+                                            src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                                    <div class="ms-3">
+                                        <div class="fw-bold">Commenter Name</div>
+                                        When you put money directly to a problem, it makes a good headline.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single comment-->
+                        <div class="d-flex">
+                            <div class="flex-shrink-0"><img class="rounded-circle"
+                                    src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                            <div class="ms-3">
+                                <div class="fw-bold">Commenter Name</div>
+                                When I look at the universe and all the ways the universe wants to kill us, I find it
+                                hard to reconcile that with statements of beneficence.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- Side widgets-->
+        <div class="col-lg-4">
+            <br><br><br>
+            <!-- Search widget-->
+            <h2>Recent Services</h2>
+
+            {% for recent_service in recent_services %}
+            <div class="card" style="width: 18rem;">
+                {% if recent_service.image %}
+                <img src="{{ recent_service.image.url }}" class="card-img-top" alt="{{ recent_service.title }}">
+                {% else %}
+                <h4 style="color:red;">pas d'image ici</h4>
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ recent_service.title }}</h5>
+                    <p class="card-text">{{ recent_service.content|truncatechars:200 }}</p>
+                    <a href="{% url 'service_detail' recent_service.id %}" class="btn btn-primary">View Service</a>
+                </div>
+            </div>
+            {% empty %}
+            <h4>pas d'élément ici</h4>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% include 'home/footer.html' %}
+{% endblock %}

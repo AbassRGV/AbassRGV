@@ -1,6 +1,98 @@
 {% extends 'home/base.html' %}
 
 
-{% block section %}
-<h1>Je suis la page d'Accueil  </h1>      
+{% block main %}
+
+<main class="container mt-5">
+
+<hero-section>
+    {% include 'home/hero.html' %}
+</hero-section>
+
+
+
+<style>
+    .card {
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .card {
+        animation: fadeInUp 0.5s ease-in-out;
+    }
+
+</style>
+
+
+<section id="formations" class="my-5">
+    <h2 class="text-center"> Nos Formations</h2>
+    <div class="row justify-content-center">
+        {% for formation in formations %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    {% if formation.image %}
+                        <img src="{{ formation.image.url }}" class="card-img-top img-fluid" alt="{{ formation.title }}">
+                    {% else %}
+                        <h3 class="text-center">Pas d'image ici</h3>
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="{% url 'formation_detail' formation.id %}">{{ formation.title }}</a>
+                        </h5>
+                        <p class="card-text">{{ formation.description|truncatechars:200 }}</p>
+                        <kbd>{{ formation.publish_name }}</kbd>
+                    </div>
+                    
+                </div>
+            </div>
+            {% empty %}
+            <h4>Pas de formation disponible</h4>
+        {% endfor %}
+    </div>
+</section>
+
+
+
+<section id="services" class="my-5">
+    <h2 class="text-center">No Services</h2>
+    <div class="row justify-content-center">
+        {% for service in services %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    {% if service.image %}
+                        <img src="{{ service.image.url }}" class="card-img-top img-fluid" alt="{{ service.title }}">
+                        {% else %}
+                        <h4>pas d'image ici</h4>
+                    {% endif %}
+                    <div class="card-body">
+                        <a href="{% url 'service_detail' service.id %}">{{ service.title }}</a>
+                        <p class="card-text">{{ service.description|truncatechars:200 }}</p>
+                        <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                            <hr class="border border-danger border-2 opacity-20">
+                        <div>Aboubacar Abass SYLLA</div>
+                        <div class="text-muted"> <kbd>{{ service.created_at}}</kbd> &middot;</div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <h4>Pas de service disponible</h4>
+        {% endfor %}
+    </div>
+</section>
+</main>
+
+{% include 'home/footer.html' %}
 {% endblock %}
