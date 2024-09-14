@@ -81,8 +81,9 @@
                         <p class="card-text">{{ service.description|truncatechars:200 }}</p>
                         <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                             <hr class="border border-danger border-2 opacity-20">
-                        <div>Aboubacar Abass SYLLA</div>
-                        <div class="text-muted"> <kbd>{{ service.created_at}}</kbd> &middot;</div>  
+                        <div class="bold">Créer par : {{ service.publish_name }}</div>
+                        <div class="text-muted"> <kbd>{{ service.created_at}}</kbd> &middot;</div>
+                      
                         </div>
                     </div>
                 </div>
