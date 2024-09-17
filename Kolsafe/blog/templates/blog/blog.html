@@ -1,0 +1,45 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block main %}
+<!--featured-cars start -->
+		<section id="featured-cars" class="featured-cars">
+			<div class="container">
+				<div class="section-header">
+					<p>Toutes <span>les</span> informations sur la Technologie</p>
+					<h2>Le Blog du cyberhackeur</h2>
+				</div><!--/.section-header-->
+				<div class="featured-cars-content">
+					<div class="row">
+						{% for blog in blogs %}
+
+						<div class="col-lg-3 col-md-4 col-sm-6">
+							<div class="single-featured-cars">
+								<div class="featured-img-box">
+									<div class="featured-cars-img">
+										<img src="{{ blog.img.url }}" alt="cars">
+									</div>
+									<div class="featured-model-info">
+										<p>
+											<span class="featured-mi-span">date: {{ blog.dateblog }}</span>
+											 {{ blog.source }}
+										</p>
+									</div>
+								</div>
+								<div class="featured-cars-txt">
+									<h2><a href="{% url 'Blog:blogdetail' blog.id %}">{{ blog.title }}</a></h2>
+									<p>
+										{{ blog.description }}
+									</p>
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+
+				</div>
+			</div><!--/.container-->
+
+		</section><!--/.featured-cars-->
+		<!--featured-cars end -->
+{% endblock %}
