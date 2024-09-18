@@ -3,49 +3,66 @@
 
 {% block main %}
 <!--featured-cars start -->
-		<section id="featured-cars" class="featured-cars">
-			<div class="container">
-				<div class="section-header">
-					<p>Toutes <span>les</span> informations sur la Technologie</p>
-					<h2>Le Blog du cyberhackeur</h2>
-				</div>
-                <!--/.section-header-->
-				<div class="featured-cars-content">
-					<div class="row">
-						{% for blog in blogs %}
-						<div class="col-lg-3 col-md-4 col-sm-6">
-							<div class="single-featured-cars">
-								<div class="featured-img-box">
-									<div class="featured-cars-img">
-										{% if blog.img %}
-                                        <img src="{{ blog.img.url }}" alt="{{ blog.title }}">
-                                        {% else %}
-                                        <h3>pas d'image ici</h3>
-                                        {% endif %}
-									</div>
-									<div class="featured-model-info">
-										<p>
-											<span class="featured-mi-span">date: {{ blog.dateblog }}</span>
-											 {{ blog.source }}
-										</p>
-									</div>
-								</div>
-								<div class="featured-cars-txt">
-									<h2><a href="{% url 'Blog:blogdetail' blog.id %}">{{ blog.title }}</a></h2>
-									<p>
-										{{ blog.description|truncatechars:100 }}
-									</p>
-								</div>
-							</div>
-						</div>
-                        {% empty %}
-                        <h3>Pas de blog pour le moment</h3>
-						{% endfor %}
-					</div>
-
-				</div>
-			</div><!--/.container-->
-
-		</section><!--/.featured-cars-->
-		<!--featured-cars end -->
+<section id="featured-cars" class="featured-cars">
+    <div class="container">
+        <div class="section-header">
+            <p>Toutes <span>les</span> informations sur la Technologie</p>
+            <h2>Le Blog du cyberhackeur</h2>
+        </div>
+        <!--/.section-header-->
+        <div class="featured-cars-content">
+            <div class="row">
+                {% for blog in blogs %}
+                <div class="col-md-6 mb-md-0 p-md-4">
+                    <div class="row g-0 bg-light position-relative">
+                        <div class="col-md-6 mb-md-0 p-md-4">
+                            <div class="featured-cars-img">
+                                {% if blog.img %}
+                                <img src="{{ blog.img.url }}" class="w-100" alt="{{ blog.title }}">
+                                {% else %}
+                                <h3>pas d'image ici</h3>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-6 p-4 ps-md-0">
+                            <h5 class="mt-0">{{ blog.title }}</h5>
+                            <p>{{ blog.description|truncatechars:100 }}</p>
+                            <a href="{% url 'Blog:blogdetail' blog.id %}" class="stretched-link">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                <h3>Pas de blog pour le moment</h3>
+                {% endfor %}
+            </div>
+        </div>
+    </div><!--/.container-->
+</section><!--/.featured-cars-->
+<!--featured-cars end -->
 {% endblock %}
+
+<!-- Ajoute ce CSS dans ton fichier CSS -->
+<style>
+    .featured-cars-img img {
+        transition: transform 0.5s ease;
+    }
+
+    .featured-cars-img img.zoom {
+        transform: scale(1.1);
+    }
+</style>
+
+<!-- Ajoute ce script avant la fin de la balise </body> -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const images = document.querySelectorAll('.featured-cars-img img');
+        images.forEach(img => {
+            img.addEventListener('load', () => {
+                img.classList.add('zoom');
+                setTimeout(() => {
+                    img.classList.remove('zoom');
+                }, 500); // Durée de l'effet de zoom
+            });
+        });
+    });
+</script>

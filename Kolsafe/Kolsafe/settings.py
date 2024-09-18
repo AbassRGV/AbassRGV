@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-
+    #'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Ajout des applications
+    
     'crispy_forms',
     "crispy_bootstrap5",
     'home',
@@ -47,7 +48,7 @@ INSTALLED_APPS = [
     'blog',
     'formation',
     'about',
-    'jazzmin',
+   
 
 ]
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
