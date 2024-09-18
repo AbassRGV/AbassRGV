@@ -11,8 +11,7 @@ class ServiceListView(ListView):
 class ServiceDetailView(DetailView):
     model = Service
     template_name = 'service/service_detail.html'
-    
-    
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['recent_services'] = Service.objects.order_by('-created_at')[:5]
