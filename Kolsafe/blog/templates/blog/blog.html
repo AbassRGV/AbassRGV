@@ -8,16 +8,20 @@
 				<div class="section-header">
 					<p>Toutes <span>les</span> informations sur la Technologie</p>
 					<h2>Le Blog du cyberhackeur</h2>
-				</div><!--/.section-header-->
+				</div>
+                <!--/.section-header-->
 				<div class="featured-cars-content">
 					<div class="row">
 						{% for blog in blogs %}
-
 						<div class="col-lg-3 col-md-4 col-sm-6">
 							<div class="single-featured-cars">
 								<div class="featured-img-box">
 									<div class="featured-cars-img">
-										<img src="{{ blog.img.url }}" alt="cars">
+										{% if blog.img %}
+                                        <img src="{{ blog.img.url }}" alt="{{ blog.title }}">
+                                        {% else %}
+                                        <h3>pas d'image ici</h3>
+                                        {% endif %}
 									</div>
 									<div class="featured-model-info">
 										<p>
@@ -29,11 +33,13 @@
 								<div class="featured-cars-txt">
 									<h2><a href="{% url 'Blog:blogdetail' blog.id %}">{{ blog.title }}</a></h2>
 									<p>
-										{{ blog.description }}
+										{{ blog.description|truncatechars:100 }}
 									</p>
 								</div>
 							</div>
 						</div>
+                        {% empty %}
+                        <h3>Pas de blog pour le moment</h3>
 						{% endfor %}
 					</div>
 

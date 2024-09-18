@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'formation',
     'about',
     'jazzmin',
+
 ]
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
