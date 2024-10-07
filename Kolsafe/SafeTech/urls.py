@@ -1,5 +1,5 @@
 """
-URL configuration for Kolsafe project.
+URL configuration for SafeTech project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
