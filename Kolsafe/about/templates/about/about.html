@@ -3,116 +3,123 @@
 
 
 {% block main %}
-	<section class="ftco-section">
-		<div class="container">
-			<h2 class="row-title text-center" >A propos de nous?</h2>
-			<p class="shadow-none p-3 mb-5 bg-black rounded">Notre entreprise : Super cool discounts if you purchase early bird tickets now. Limited tickets available with some awesome perks and goodies! </p>
-			<!-- Start: Desc -->
-        <div class="row me-row content-ct mb-5" >
-          <h2 class="row-title mb-5">Nos services :</h2>
-          <div class="col-md-4 feature">
-            <span class="material-icons" id="iconButton" >security</span>
-            <h3>Formations Cybersecurité</h3>
-            <p>Super cool discounts if you purchase early bird tickets now. Limited tickets available with some awesome perks and goodies!</p>
-          </div>
-          <div class="col-md-4 feature">
-            <span class="material-icons" id="iconButton" >groups</span>
-            <h3>Formation des employeurs</h3>
-            <p>Best in class expert speakers who have extensive knowledge of the topic. All speakers are curated by the panel of experts.</p>
-          </div>
-          <div class="col-md-4 feature">
-            <span class="material-icons" id="iconButton" >code</span>
-            <h3>Developpement d'applications</h3>
-            <p>Meet the people attending this event around the globe. This will be the best opportunity to meet and greet people from your industry.</p>
-          </div>
-        </div>
-        <!-- End: Desc -->
-			<div class="row justify-content-center">
-				<div class="col-md-6 text-center mb-3">
-					<h2 class="heading-section" id="contact">Contactez-Nous</h2>
-				</div>
+<section class="ftco-section">
+	<div class="container"><br>
+		<h2 class="row-title text-center">A propos de nous?</h2>
+		<p class="shadow-none p-3 mb-5 rounded">Notre entreprise : Super cool discounts if you purchase early
+			bird tickets now. Limited tickets available with some awesome perks and goodies! </p>
+		<!-- Start: Desc -->
+		<div class="row me-row content-ct mb-5">
+			<h2 class="row-title mb-5 text-center">Nos services :</h2>
+			<div class="col-md-4 feature">
+				<span class="material-icons" id="iconButton">security</span>
+				<h3>Formations Cybersecurité</h3>
+				<p>Super cool discounts if you purchase early bird tickets now. Limited tickets available with some
+					awesome perks and goodies!</p>
 			</div>
-			<div class="row justify-content-center">
-				<div class="col-md-12">
-					<div class="wrapper">
-						<div class="row no-gutters">
-							<div class="col-lg-8 col-md-7 order-md-last d-flex align-items-stretch">
-								<div class="contact-wrap w-100 p-md-5 p-4">
-									<h3 class="mb-4">Ecrivez-Nous</h3>
-									<div id="form-message-warning" class="mb-4"></div>
-				      		<div id="form-message-success" class="mb-4">
-				            Votre message a été envoyé!
-				      		</div>
-									<form method="POST" id="contactForm" name="contactForm" class="contactForm">
-										 {% csrf_token %}
-										<div class="row">
-											<div class="col-md-6">
-												<div class="form-group">
-													{{form.name|as_crispy_field}}</div>
-											</div>
-											<div class="col-md-6">
-												<div class="form-group">
-													{{form.email|as_crispy_field}}</div>
-											</div>
-											<div class="col-md-12">
-												<div class="form-group">
-													{{form.subject|as_crispy_field}}</div>
-											</div>
-											<div class="col-md-12">
-												{{form.message|as_crispy_field}}
-											</div>
-											<div class="col-md-12">
-												<div class="form-group">
-													<input type="submit" value="Send Message" class="btn btn-secondary">
-													<div class="submitting"></div>
-												</div>
+			<div class="col-md-4 feature">
+				<span class="material-icons" id="iconButton">groups</span>
+				<h3>Formation des employeurs</h3>
+				<p>Best in class expert speakers who have extensive knowledge of the topic. All speakers are curated by
+					the panel of experts.</p>
+			</div>
+			<div class="col-md-4 feature">
+				<span class="material-icons" id="iconButton">code</span>
+				<h3>Developpement d'applications</h3>
+				<p>Meet the people attending this event around the globe. This will be the best opportunity to meet and
+					greet people from your industry.</p>
+			</div>
+		</div>
+		<!-- End: Desc -->
+		<div class="row justify-content-center">
+			<div class="col-md-6 text-center mb-3">
+				<h2 class="heading-section" id="contact">Contactez-Nous</h2>
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-md-12">
+				<div class="wrapper">
+					<div class="row no-gutters">
+						<div class="col-lg-8 col-md-7 order-md-last d-flex align-items-stretch">
+							<div class="contact-wrap w-100 p-md-5 p-4">
+								<h3 class="mb-4">Ecrivez-Nous</h3>
+								<div id="form-message-warning" class="mb-4"></div>
+								<div id="form-message-success" class="mb-4">
+									
+								</div>
+								<form method="POST" id="contactForm" name="contactForm" class="contactForm">
+									{% csrf_token %}
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
+												{{form.name|as_crispy_field}}</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												{{form.email|as_crispy_field}}</div>
+										</div>
+										<div class="col-md-12">
+											<div class="form-group">
+												{{form.subject|as_crispy_field}}</div>
+										</div>
+										<div class="col-md-12">
+											{{form.message|as_crispy_field}}
+										</div>
+										<div class="col-md-12">
+											<div class="form-group">
+												<input type="submit" value="Send Message" class="btn btn-secondary">
+												<div class="submitting"></div>
 											</div>
 										</div>
-									</form>
-								</div>
+									</div>
+								</form>
 							</div>
-							<div class="col-lg-4 col-md-5 d-flex align-items-stretch">
-								<div class="info-wrap bg-secondary w-100 p-md-5 p-4">
-									<h3>Nous somme à votre écoute</h3>
-									<p class="mb-4">Vos suggestions, critiques et propositions sont les biens venu.</p>
-				        	<div class="dbox w-100 d-flex align-items-start">
-				        		<div class="icon d-flex align-items-center justify-content-center">
-				        			<span class="fa fa-map-marker"></span>
-				        		</div>
-				        		<div class="text pl-3">
-					            <p><span>Address :</span> Matoto yimbaya marché</p>
-					          </div>
-				          </div>
-				        	<div class="dbox w-100 d-flex align-items-center">
-				        		<div class="icon d-flex align-items-center justify-content-center">
-				        			<span class="fa fa-phone"></span>
-				        		</div>
-				        		<div class="text pl-3">
-					            <p><span>Phone :</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
-					          </div>
-				          </div>
-				        	<div class="dbox w-100 d-flex align-items-center">
-				        		<div class="icon d-flex align-items-center justify-content-center">
-				        			<span class="fa fa-paper-plane"></span>
-				        		</div>
-				        		<div class="text pl-3">
-					            <p><span>Email :</span> <a href="mailto:info@yoursite.com">kolsafe@gmail.com</a></p>
-					          </div>
-				          </div>
-				        	<div class="dbox w-100 d-flex align-items-center">
-				        		<div class="icon d-flex align-items-center justify-content-center">
-				        			<span class="fa fa-globe"></span>
-				        		</div>
-				        		<div class="text pl-3">
-					            <p><span>Site Web :</span> <a href="#">kolsafe.com</a></p>
-					          </div>
-				          </div>
-			          </div>
+						</div>
+						<div class="col-lg-4 col-md-5 d-flex align-items-stretch text-light">
+							<div class="info-wrap bg-secondary w-100 p-md-5 p-4">
+								<h3 class="text-light">Nous somme à votre écoute</h3>
+								<p class="mb-4">Vos suggestions, critiques et propositions sont les biens venu.</p>
+								<div class="dbox w-100 d-flex align-items-start">
+									<div class="icon d-flex align-items-center justify-content-center">
+										<span class="fa fa-map-marker"></span>
+									</div>
+									<div class="text pl-3">
+										<p><span>Address :</span> Matoto yimbaya marché</p>
+									</div>
+								</div>
+								<div class="dbox w-100 d-flex align-items-center">
+									<div class="icon d-flex align-items-center justify-content-center">
+										<span class="fa fa-phone"></span>
+									</div>
+									<div class="text pl-3">
+										<p><span>Phone :</span> <a class="text-light" href="tel://1234567920">+ 1235 2355 98</a></p>
+									</div>
+								</div>
+								<div class="dbox w-100 d-flex align-items-center">
+									<div class="icon d-flex align-items-center justify-content-center">
+										<span class="fa fa-paper-plane"></span>
+									</div>
+									<div class="text pl-3">
+										<p><span>Email :</span> <a class="text-light" href="mailto:info@yoursite.com">kolsafe@gmail.com</a>
+										</p>
+									</div>
+								</div>
+								<div class="dbox w-100 d-flex align-items-center">
+									<div class="icon d-flex align-items-center justify-content-center">
+										<span class="fa fa-globe"></span>
+									</div>
+									<div class="text pl-3">
+										<p><span>Site Web :</span> <a class="text-light" href="#">kolsafe.com</a></p>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
+	<br>
+	{% include 'home/footer.html' %}
+</section>
 {% endblock %}

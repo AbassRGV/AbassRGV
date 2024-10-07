@@ -1,4 +1,8 @@
 from django.db import models
+from django_countries.fields import CountryField
+from phonenumber_field.modelfields import PhoneNumberField
+
+
 
 
 class Service(models.Model):
@@ -12,3 +16,13 @@ class Service(models.Model):
 
     def __str__(self):
         return self.title
+    
+    
+class ContactService(models.Model):
+    service = models.ForeignKey('Service', on_delete=models.CASCADE)
+    pays = CountryField()
+    ville = models.CharField(max_length=200)
+    tel_whatsapp = PhoneNumberField()
+    email = models.EmailField()
+    message = models.TextField()
+    date = models.DateField(auto_now_add=True)

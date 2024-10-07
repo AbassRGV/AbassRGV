@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Service
+from .models import Service, ContactService
 
 
 class AdminService(admin.ModelAdmin):
@@ -7,3 +7,13 @@ class AdminService(admin.ModelAdmin):
 
 
 admin.site.register(Service, AdminService)
+
+
+
+
+
+class ContactServiceAdmin(admin.ModelAdmin):
+    list_display = ['service', 'pays', 'ville', 'tel_whatsapp', 'email', 'message']
+
+
+admin.site.register(ContactService, ContactServiceAdmin)

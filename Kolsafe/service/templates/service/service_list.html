@@ -17,7 +17,7 @@
                 {% endif %}
                     
                 <div class="card-body">
-                    <h5 class="card-title">{{ service.title }}</h5>
+                    <h5 class="card-title text-bold">{{ service.title }}</h5>
                     <p class="card-text">{{ service.description|truncatechars:200 }}</p>
                     <p class="card-text"><strong>Prix:</strong> {{ service.price }}</p>
                     <a href="{% url 'service_detail' service.pk %}" class="btn btn-primary">Voir Détails</a>
