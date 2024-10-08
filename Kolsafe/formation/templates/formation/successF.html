@@ -1,0 +1,13 @@
+{% extends 'home/base.html' %}
+
+{% block main %}
+
+<div class="container">
+    <div class="alert alert-success mt-5 fade show" role="alert">
+        <h1 class="animate__animated animate__fadeInDown">Merci de nous avoir vous inscrire à cette formation !</h1>
+        <p class="animate__animated animate__fadeInUp">Nous avons bien reçu votre message et nous vous répondrons sous peu.</p>
+        <a href="{% url 'formation_list' %}" class="btn btn-primary animate__animated animate__bounceIn">Retour aux formations</a>
+    </div>
+</div>
+
+{% endblock %}

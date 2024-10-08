@@ -1,4 +1,7 @@
 from django.db import models
+from phonenumber_field.modelfields import PhoneNumberField
+from django_countries.fields import CountryField
+
 
 
 class Formation(models.Model):
@@ -13,3 +16,15 @@ class Formation(models.Model):
     
     def __str__(self):
         return self.title
+
+class InscriptionF(models.Model):
+    formation = models.ForeignKey('Formation', on_delete=models.CASCADE)
+    nomComplet = models.CharField(max_length=300)
+    tel_whatsapp = PhoneNumberField()
+    email = models.EmailField()
+    message = models.TextField()
+    date = models.DateField(auto_now_add=True)
+    
+    
+
+
