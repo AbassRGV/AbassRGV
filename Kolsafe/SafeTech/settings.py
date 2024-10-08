@@ -13,15 +13,11 @@ import os
 from pathlib import Path
 import environ
 
-from dotenv import load_dotenv
-
-load_dotenv()  # Charger les variables d'environnement depuis le fichier .env
-
-SECRET_KEY = os.getenv('SECRET_KEY')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+
 env = environ.Env()
 environ.Env.read_env(env_file=str(BASE_DIR / "SafeTech" / ".env"))
 
@@ -34,9 +30,6 @@ SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG", False)
-
-ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
