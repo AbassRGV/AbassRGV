@@ -20,9 +20,10 @@ class Service(models.Model):
     
 class ContactService(models.Model):
     service = models.ForeignKey('Service', on_delete=models.CASCADE)
+    nomComplet = models.CharField(max_length=300)
     pays = CountryField()
     ville = models.CharField(max_length=200)
     tel_whatsapp = PhoneNumberField()
     email = models.EmailField()
     message = models.TextField()
-    date = models.DateField(auto_now_add=True)
+    created_at = models.DateField(auto_now_add=True)

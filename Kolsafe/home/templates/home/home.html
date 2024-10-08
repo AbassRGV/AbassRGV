@@ -31,6 +31,16 @@
     }
     .card {
         animation: fadeInUp 0.5s ease-in-out;
+        background-color: hsl(0, 1%, 35%);
+        border: 1px solid #dee2e6;
+        color:whitesmoke;
+    }
+
+    .capitalize-first {
+        text-transform: lowercase;
+    }
+    .capitalize-first::first-letter {
+        text-transform: uppercase;
     }
 
 </style>
@@ -51,14 +61,14 @@
                         <h5 class="card-title">
                             <a href="{% url 'formation_detail' formation.id %}">{{ formation.title }}</a>
                         </h5>
-                        <p class="card-text">{{ formation.description|truncatechars:200 }}</p>
+                        <p class="card-text">{{ formation.description|truncatechars:100 }}</p>
                         <kbd>{{ formation.publish_name }}</kbd>
                     </div>
                     
                 </div>
             </div>
             {% empty %}
-            <h4>Pas de formation disponible</h4>
+            <h4 class="text-center capitalize-first">Pas de formation disponible</h4>
         {% endfor %}
     </div>
 </section>
@@ -78,7 +88,7 @@
                     {% endif %}
                     <div class="card-body">
                         <a href="{% url 'service_detail' service.id %}">{{ service.title }}</a>
-                        <p class="card-text">{{ service.description|truncatechars:200 }}</p>
+                        <p class="card-text">{{ service.description|truncatechars:100 }}</p>
                         <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                             <hr class="border border-danger border-2 opacity-20">
                         <div class="bold">Créer par : {{ service.publish_name }}</div>
@@ -89,7 +99,7 @@
                 </div>
             </div>
             {% empty %}
-            <h4>Pas de service disponible</h4>
+            <h4 class="text-center capitalize-first">Pas de service disponible</h4>
         {% endfor %}
     </div>
 </section>

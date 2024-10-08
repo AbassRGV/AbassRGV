@@ -13,7 +13,7 @@ admin.site.register(Service, AdminService)
 
 
 class ContactServiceAdmin(admin.ModelAdmin):
-    list_display = ['service', 'pays', 'ville', 'tel_whatsapp', 'email', 'message']
+    list_display = ['service', 'nomComplet', 'pays', 'ville', 'tel_whatsapp', 'email', 'message', 'created_at']
 
 
 admin.site.register(ContactService, ContactServiceAdmin)

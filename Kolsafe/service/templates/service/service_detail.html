@@ -13,8 +13,8 @@
                     <!-- Service meta content-->
                     <div class="text-muted fst-italic mb-2">Publier {{ service.created_at|date:"F d, Y" }} par Aboubacar Abass SYLLA</div>
                     <!-- Service categories-->
-                    <a class="badge bg-secondary text-decoration-none link-light" href="{% url 'service_list' %}">Service</a>
-                    <a class="badge bg-secondary text-decoration-none link-light" href="#">Offer</a>
+                    <a class="badge bg-secondary text-decoration-none link-light" href="{% url 'service_list' %}">Les Services</a>
+                   
 
                     <br><br>
                     <div class="text-muted fst-italic mb-2">Modifier le {{ service.modified_at|date:"F d, Y" }} par Aboubacar Abass SYLLA</div>
@@ -36,7 +36,7 @@
             <section class="mb-5" >
                 <div class="card bg-light">
                     <div class="card-body">
-                        <h1 class="text-center">Avez-vous besoin ce service ?</h1>
+                        <h1 class="text-center capitalize-first">Avez-vous besoin ce service ?</h1>
                         <!-- formulaire de contact -->
                     {% include 'service/contactService.html' %}
                         <!-- End formulaire de contact -->
@@ -49,7 +49,7 @@
         <div class="col-lg-4">
             <br><br><br>
             <!-- Search widget-->
-            <h2>Recent Services</h2>
+            <h2>Les Services Recents</h2>
 
             {% for recent_service in recent_services %}
             <div class="card" style="width: 18rem;">

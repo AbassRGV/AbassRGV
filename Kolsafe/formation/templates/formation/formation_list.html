@@ -1,8 +1,9 @@
 {% extends 'home/base.html' %}
 
+
 {% block main %}
 <br>
-<h1 class="text-center mb-5">Liste des Formations</h1>
+<h1 class="text-center mb-5 capitalize-first">Liste des Formations</h1>
 <div class="container mt-5">
     <div class="row row-cols-1 row-cols-md-3 g-4">
         {% for formation in object_list %}
@@ -30,7 +31,7 @@
         </div>
         {% empty %}
         <div class="col-12 text-center">
-            <h3>Pas de formation disponible ici</h3>
+            <h3 class="capitalize-first">Pas de formation disponible ici</h3>
         </div>
         {% endfor %}
     </div>

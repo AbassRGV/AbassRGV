@@ -31,25 +31,16 @@
                 <section class="mb-5">
                     <p class="fs-5 mb-4">{{ formation.description }}</p>
                 </section>
-            </article>
-            <!-- Comments section-->
-            <section class="mb-5" >
-                <div class="card bg-light">
-                    <div class="card-body">
-                        <h1 class="text-center"> Inscription à la formation</h1>
-                        <!-- formulaire de contact -->
+           
                     {% include 'formation/inscriptionF.html' %}
                         <!-- End formulaire de contact -->
 
-                    </div>
-                </div>
-            </section>
         </div>
         <!-- Side widgets-->
         <div class="col-lg-4">
             <br><br><br>
             <!-- Search widget-->
-            <h2>Recent Formations</h2>
+            <h2 class="capitalize-first">Les Formations Recentes</h2>
 
             {% for recent_formation in recent_formations %}
             <div class="card" style="width: 18rem;">

@@ -32,21 +32,25 @@
 {% block main %}
 
 <div class="form-container">
-    <h2 class="form-title">Contact Service</h2>
     <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="form-group">
             <label for="{{ form.service.id_for_label }}">{{ form.service.label }}</label>
             {{ form.service }}
         </div>
-        <div class="form-group">
+
+      
+        <div class="form-group form-select" aria-label="Default select example">
             <label for="{{ form.pays.id_for_label }}">{{ form.pays.label }}</label>
             {{ form.pays }}
         </div>
-        <div class="form-group">
-            <label for="{{ form.ville.id_for_label }}">{{ form.ville.label }}</label>
-            {{ form.ville }}
-        </div>
+
+            <div class="form-group">
+                <label for="{{ form.ville.id_for_label }}">{{ form.ville.label }}</label>
+                {{ form.ville }}
+            </div>
+        
+
         <div class="form-group">
             <label for="{{ form.tel_whatsapp.id_for_label }}">{{ form.tel_whatsapp.label }}</label>
             {{ form.tel_whatsapp }}

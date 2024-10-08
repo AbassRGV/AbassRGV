@@ -31,8 +31,18 @@
 
         <!--style.css-->
         <link rel="stylesheet" href="{% static 'blog/assets/css/style.css' %}">
+
+        <style>
+            .capitalize-first {
+                text-transform: lowercase;
+            }
+            .capitalize-first::first-letter {
+                text-transform: uppercase;
+            }
+        </style>
  
 </head>
+
 
 <body style="font-family: 'Lato', sans-serif;">
 
